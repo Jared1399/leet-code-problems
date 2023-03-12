@@ -11,8 +11,17 @@
  * @return {ListNode}
  */
 
-l1 = [2,4,3]
-l2 = [5,6,4]
+
+let head = new ListNode(2);
+head.next = new ListNode(4);
+head.next.next = new ListNode(3);
+
+let head2 = new ListNode(5);
+head2.next = new ListNode(6);
+head2.next.next = new ListNode(4);
+
+l1 = head
+l2 = head2
 //expected outoput [7,0,8]
 var addTwoNumbers = function(l1, l2) {
 
