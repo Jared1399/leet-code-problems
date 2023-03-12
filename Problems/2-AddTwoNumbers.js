@@ -11,8 +11,10 @@
  * @return {ListNode}
  */
 
-l1 = [2,4,3]
-l2 = [5,6,4]
+// l1 = [2,4,3]
+// l2 = [5,6,4]
+
+l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 //expected output [7,0,8]
 
 var addTwoNumbers = function(l1, l2) {
@@ -30,14 +32,14 @@ var addTwoNumbers = function(l1, l2) {
 
     
     multiplier = 1
-    for(let i =0; i < l1.length; i++){
+    for(let i =0; i < l2.length; i++){
         totalL2 += l2[i]*multiplier
         multiplier *= 10
     }
 
-    totalSum = totalL1+totalL2
+    return totalSum = totalL1+totalL2
 
-    
+
 
 };
 
