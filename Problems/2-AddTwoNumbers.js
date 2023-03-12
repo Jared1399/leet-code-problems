@@ -11,36 +11,48 @@
  * @return {ListNode}
  */
 
-// l1 = [2,4,3]
-// l2 = [5,6,4]
-
-l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
-//expected output [7,0,8]
-
+l1 = [2,4,3]
+l2 = [5,6,4]
+//expected outoput [7,0,8]
 var addTwoNumbers = function(l1, l2) {
 
     restultArray =[]
     
     totalL1 = 0
     totalL2 = 0
-    
-    multiplier = 1
-    for(let i =0; i < l1.length; i++){
-        totalL1 += l1[i]*multiplier
+
+    multiplier = 1 
+    while (l1 != null) {
+
+        totalL1 += l1.val*multiplier
+        l1= l1.next;
         multiplier *= 10
     }
+    console.log(totalL1)
 
-    
     multiplier = 1
-    for(let i =0; i < l2.length; i++){
-        totalL2 += l2[i]*multiplier
+    while (l2 != null) {
+
+        totalL2 += l2.val*multiplier
+        l2= l2.next;
         multiplier *= 10
+        // console.log(totalL2)
     }
 
-    return totalSum = totalL1+totalL2
+    total = totalL1+totalL2+""
 
+    let head = new ListNode(null);
+    let node = head; 
 
+    for (let i = total.length-1; i >= 0; i--) {
+        node.next = new ListNode(parseInt(total[i])); 
+        node = node.next;
+    }
+
+    let newHead = head.next;
+    head.next = null; 
+  
+    return newHead; 
 
 };
-
 console.log(addTwoNumbers(l1,l2))
